@@ -10,7 +10,7 @@ html {
     background-color: #000;
 }
 
-.wrapper {
+main {
     /* The height needs to be set to a fixed value for the effect to work.
      * 100vh is the full height of the viewport. */
     height: 100vh;
@@ -21,60 +21,61 @@ html {
     /* Set the perspective to some value i.e 2px. This is essentailly the simulated distance from the viewport to transformed objects. The lower the value, the further away objects appear*/
     perspective: $perspective;
 
-    .section {
-        /* Needed for children to be absolutely positioned relative to the parent. */
-        position: relative;
+    // Background will have a preset vertical image behind all scenes.
+    section {
         /* The height of the container. Must be set, use it to affect the distance between sections. */
         height: 100vh;
         /* For text formatting. */
         display: flex;
+        justify-content:center;
         align-items: center;
-        justify-content: center;
         color: white;
-        //Individual styling for content boxes
-        .content1 {
+        //Individual styling for content box
+        .content {
             width: 50%;
             padding: 40px;
             background-color: #aaa;
-
-        }
-        .content2 {
-            width: 50%;
-            padding: 40px;
-
         }
     }
     //Each parallax box has a spseudo element that is placed longer back on the z-axis - and then trabsformed back in size 
-    .parallax::after {
-        /* Display and position the pseudo-element */
-        content: " ";
+    .parallax {
         position: absolute;
         height:100vh;
         width:100vw;
-
-        /* Move the pseudo-element back away from the camera,
+        /* Move the element back away from the camera,
          * then scale it back up to fill the viewport.
          * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
-        transform: translateZ($translateZ) scale($scale);
-        /* Force the background image to fill the whole element. */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 50%;
-        /* Keep the image from overlapping sibling elements. */
-        z-index: -1;
+         transform: translateZ($translateZ) scale($scale);
+         /* Force the background image to fill the whole element. */
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 50%;
+         /* Keep the image from overlapping sibling elements. */
+         z-index: -1;
+         .content{
+             width:25vw;
+             align-self:flex-start;
+             margin: 5vh 0 0 60vw;
+             background-color: rgba(50,50,50,.5);
+             border-radius:4px;
+         }
     }
 
     /* Sets the actual background images to adorable kitties. This part is crucial. */
-    .bg1::after {
+    .bg{
+        background-image:url('./img/background.png');
+        background-repeat: repeat-y;
+        height:10000px;
+        transform: translateZ(-4px) scale(8);
+        z-index:-3;
+    }
+    .bg1{
         background-image: url('./img/planet1.png');
     }
-
-    .bg2::after {
+    .bg2{
         background-image: url('./img/planet2.png');
-    }
-
-    .bg3::after{
-        background-image: url('./img/moonearth.jpg');
-        background-size:100%;
+        background-position: right center;
+        height:100vh;
+        transform: translateZ($translateZ) scale(calc(#{$scale}/1.5));
     }
 }

@@ -4,11 +4,17 @@ body, html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif; }
 
-.parallax-1 {
+.parallax {
   background-image: url("./img/web.png");
   height: 50vh;
   background-attachment: fixed;
   background-size: cover; }
+
+.bg1 {
+  background-image: url("./img/web.png"); }
+
+.bg2 {
+  background-image: url("./img/web.png"); }
 
 .section {
   width: 100vw;
