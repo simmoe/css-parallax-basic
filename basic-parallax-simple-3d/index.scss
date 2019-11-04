@@ -26,15 +26,14 @@ main {
         /* The height of the container. Must be set, use it to affect the distance between sections. */
         height: 100vh;
         /* For text formatting. */
-        display: flex;
-        justify-content:center;
-        align-items: center;
+        display: grid;
+        place-items:center;
         color: white;
         //Individual styling for content box
         .content {
             width: 50%;
             padding: 40px;
-            background-color: #aaa;
+            background-color: rgba(100,100,100, .7);
         }
     }
     //Each parallax box has a spseudo element that is placed longer back on the z-axis - and then trabsformed back in size 
@@ -54,10 +53,8 @@ main {
          z-index: -1;
          .content{
              width:25vw;
-             align-self:flex-start;
              margin: 5vh 0 0 60vw;
              background-color: rgba(50,50,50,.5);
-             border-radius:4px;
          }
     }
 
