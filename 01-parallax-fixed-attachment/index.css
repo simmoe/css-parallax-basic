@@ -1,0 +1,59 @@
+html, body{
+  margin:0;
+  padding:0;
+  font-family:Arial, 'Open Sans';
+  font-weight:300;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header{
+  height:14vh;
+  display:grid;
+  place-items:center;
+  background-color:#fed766;;
+}
+
+.parallax{
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover; 
+}
+
+.bg1{
+  background-image: url("./img/girl.jpeg"); 
+}
+
+.bg2{
+  background-image: url("./img/girl.jpeg"); 
+}
+
+.bg3 {
+  background-image: url("./img/boy.jpeg"); 
+}
+
+section {
+  height:100vh;
+  display:grid;
+  place-items:center;
+  color:white;
+}
+
+section:nth-of-type(odd) {
+  background: #fe4a49;
+}
+
+section:nth-of-type(even) {
+  background: #fed766;;
+}
+section:last-of-type{
+  background-image: url("./img/alf.jpg");
+  background-size:cover;
+  font-size:10vh;
+}
+
+
+
+
