@@ -1,0 +1,85 @@
+html, body{
+  margin:0;
+  padding:0;
+  font-family:Arial, 'Open Sans';
+  font-weight:300;
+  font-size:1.6rem;
+  background:white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.parallax{
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.circle{
+  border:1px solid #eee;
+  background:rgba(255, 255, 255, .4);
+  height:10vw;
+  width:10vw;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  position:sticky;
+  top:4rem;
+}
+
+.circle img{
+  width:50%;
+}
+
+.bg1{
+  background-image: url("../img/boy.jpeg");
+  display:grid;
+  grid-auto-flow: row;
+  justify-content:left;
+  padding:4rem;
+  gap:4rem;
+}
+
+.bg2{
+  background-image: url('../img/girl.jpeg');
+  display:grid;
+  padding:4rem;
+  gap:4rem;
+  color:white;
+  justify-content: center;
+}
+
+.bg2 .images {
+  display:grid;
+  grid-auto-flow: column;
+  transform:translateX(100vw);
+}
+
+.bg2 .images .circle{
+  transition: .3s ease;
+}
+.bg2 .images .circle:hover{
+  transform:scale(1.4);
+}
+.bg2 .content{
+  transform:translateX(100vw);
+}
+.bg2:hover > .content{
+  animation: slideIn .3s ease forwards;
+}
+.bg2:hover > .images{
+  animation: slideIn .3s ease forwards;
+  animation-delay: .4s;
+}
+
+@keyframes slideIn{
+  from{
+    transform: translateX(100vw);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
